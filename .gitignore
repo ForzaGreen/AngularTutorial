@@ -2,3 +2,5 @@ node_modules/
 .vscode/
 src/app/*.map
 src/app/*.js
+main.js
+main.js.map
