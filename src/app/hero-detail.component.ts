@@ -8,16 +8,7 @@ import { Hero } from './hero';
 
 @Component({
   selector: 'hero-detail',
-  template: `
-    <div *ngIf="hero">
-      <h2>{{hero.name}} details!</h2>
-      <div><label>id: </label>{{hero.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="hero.name" placeholder="name">
-      </div>
-    </div>
-  `
+  templateUrl: './hero-detail.component.html'
 })
 export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
@@ -30,6 +21,8 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) {}
-
+  goBack(): void {
+    this.location.back();
+  }
   @Input() hero: Hero;
 }
